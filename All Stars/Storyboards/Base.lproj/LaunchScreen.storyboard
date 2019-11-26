@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Np-96-NGJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="rdT-xL-HmH">
+            <objects>
+                <navigationController id="7Np-96-NGJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="04D-nx-BcA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ucf-ba-3FU" kind="relationship" relationship="rootViewController" id="Mh4-aI-jm8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNM-EX-eyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-559" y="382"/>
+        </scene>
+        <!--Card Collection-->
+        <scene sceneID="F8k-MT-Xho">
+            <objects>
+                <viewController id="Ucf-ba-3FU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eRF-x9-CRw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nnL-fQ-ZA4">
+                                <rect key="frame" x="0.0" y="509" width="414" height="387"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNp-4t-Rkj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="421"/>
+                                <color key="backgroundColor" name="Card Holder Background Color"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BNp-4t-Rkj" firstAttribute="top" secondItem="xpz-L8-OxQ" secondAttribute="top" id="2Az-Le-IgU"/>
+                            <constraint firstItem="nnL-fQ-ZA4" firstAttribute="top" secondItem="BNp-4t-Rkj" secondAttribute="bottom" id="3ck-UE-Sc8"/>
+                            <constraint firstItem="nnL-fQ-ZA4" firstAttribute="height" secondItem="xpz-L8-OxQ" secondAttribute="height" multiplier="1:2" id="48t-iy-Yw2"/>
+                            <constraint firstItem="nnL-fQ-ZA4" firstAttribute="leading" secondItem="xpz-L8-OxQ" secondAttribute="leading" id="4Gg-QQ-Bfs"/>
+                            <constraint firstAttribute="trailing" secondItem="BNp-4t-Rkj" secondAttribute="trailing" id="DLY-T0-1Gu"/>
+                            <constraint firstItem="BNp-4t-Rkj" firstAttribute="leading" secondItem="eRF-x9-CRw" secondAttribute="leading" id="Gjo-nZ-NvO"/>
+                            <constraint firstItem="nnL-fQ-ZA4" firstAttribute="trailing" secondItem="xpz-L8-OxQ" secondAttribute="trailing" id="VH9-Gu-yJ7"/>
+                            <constraint firstAttribute="bottom" secondItem="nnL-fQ-ZA4" secondAttribute="bottom" id="ijD-x5-nPh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xpz-L8-OxQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Card Collection" id="LUb-mQ-UZG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="16h-pp-Lx7"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EwM-43-nUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="314.49275362318843" y="381.69642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Card Holder Background Color">
+            <color red="0.92100000381469727" green="0.92100000381469727" blue="0.92100000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

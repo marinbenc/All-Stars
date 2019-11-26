@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="79i-ko-nYo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="GId-kq-dow">
+            <objects>
+                <navigationController id="79i-ko-nYo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AJD-Uj-NQ1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ewu-g0-dbT" kind="relationship" relationship="rootViewController" id="T5h-Js-YzF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Yr-rj-t81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="116"/>
+        </scene>
+        <!--Card Collection-->
+        <scene sceneID="gX3-36-py3">
+            <objects>
+                <viewController id="Ewu-g0-dbT" customClass="CardListController" customModule="All_Stars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JOf-XQ-e5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DR1-gq-x6V">
+                                <rect key="frame" x="0.0" y="509" width="414" height="387"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ewu-g0-dbT" id="3CI-ml-iwS"/>
+                                    <outlet property="delegate" destination="Ewu-g0-dbT" id="8mV-lR-h4Y"/>
+                                </connections>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db1-LS-x1h">
+                                <rect key="frame" x="0.0" y="88" width="414" height="421"/>
+                                <color key="backgroundColor" name="Card Holder Background Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iRm-FM-Lf3">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ewu-g0-dbT" id="pKJ-Dr-WiZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DR1-gq-x6V" secondAttribute="trailing" id="Eh2-oY-yWX"/>
+                            <constraint firstAttribute="trailing" secondItem="db1-LS-x1h" secondAttribute="trailing" id="Ukg-7W-ec3"/>
+                            <constraint firstItem="db1-LS-x1h" firstAttribute="top" secondItem="YGt-Hs-D3V" secondAttribute="top" id="VSx-cb-geN"/>
+                            <constraint firstItem="DR1-gq-x6V" firstAttribute="height" secondItem="YGt-Hs-D3V" secondAttribute="height" multiplier="1:2" id="cyo-WI-2HW"/>
+                            <constraint firstItem="DR1-gq-x6V" firstAttribute="leading" secondItem="JOf-XQ-e5Z" secondAttribute="leading" id="h9r-c7-fKr"/>
+                            <constraint firstItem="db1-LS-x1h" firstAttribute="leading" secondItem="JOf-XQ-e5Z" secondAttribute="leading" id="qAZ-JN-Ywm"/>
+                            <constraint firstItem="DR1-gq-x6V" firstAttribute="top" secondItem="db1-LS-x1h" secondAttribute="bottom" id="sQG-dT-Pkd"/>
+                            <constraint firstAttribute="bottom" secondItem="DR1-gq-x6V" secondAttribute="bottom" id="ufR-pX-Gkf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YGt-Hs-D3V"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Card Collection" id="6qS-wN-bTM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vrM-Zg-9kJ">
+                            <connections>
+                                <segue destination="22g-ez-ZUC" kind="presentation" id="oBB-GU-rSd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="db1-LS-x1h" id="Dwf-JL-fcB"/>
+                        <outlet property="tableView" destination="DR1-gq-x6V" id="ohH-b6-i6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zwW-5C-53g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356.52173913043481" y="115.84821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ugf-vd-gsf">
+            <objects>
+                <navigationController id="22g-ez-ZUC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LNk-8g-QGh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EMw-ft-ima" kind="relationship" relationship="rootViewController" destinationCreationSelector="showTeamList:" id="tdi-PE-lqJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Rc-aN-X5c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="116"/>
+        </scene>
+        <!--Choose Player-->
+        <scene sceneID="3Dx-Ff-EkU">
+            <objects>
+                <viewController id="EMw-ft-ima" customClass="TeamListController" customModule="All_Stars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HPa-Wn-Bps">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Twb-zG-h4b">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="team.list.cell" textLabel="KaH-RE-fQx" style="IBUITableViewCellStyleDefault" id="mf8-gK-z9V">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mf8-gK-z9V" id="bTC-Bh-JFG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KaH-RE-fQx">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EMw-ft-ima" id="msk-Id-DJw"/>
+                                    <outlet property="delegate" destination="EMw-ft-ima" id="8wr-xN-64Z"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Twb-zG-h4b" secondAttribute="bottom" id="K1y-m7-2gY"/>
+                            <constraint firstItem="Twb-zG-h4b" firstAttribute="top" secondItem="HPa-Wn-Bps" secondAttribute="top" id="Q3f-aw-20N"/>
+                            <constraint firstItem="Twb-zG-h4b" firstAttribute="leading" secondItem="HPa-Wn-Bps" secondAttribute="leading" id="T8o-rm-JSd"/>
+                            <constraint firstAttribute="trailing" secondItem="Twb-zG-h4b" secondAttribute="trailing" id="fFh-fQ-FCD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vjs-Oj-CNj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose Player" id="6fx-fU-ary">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="cancel" id="aqo-GF-bTf">
+                            <connections>
+                                <segue destination="La8-G8-s9L" kind="unwind" unwindAction="cancelNewCard:" id="shT-xj-zay"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Twb-zG-h4b" id="yac-hE-3Px"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3rK-Za-AdY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="La8-G8-s9L" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Card Holder Background Color">
+            <color red="0.92100000381469727" green="0.92100000381469727" blue="0.92100000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
